@@ -34,7 +34,6 @@ scoutbtn{
     position: relative;
 
     transition: background-color 100ms linear;
-
   }
 
 
@@ -63,17 +62,17 @@ scoutbtn{
 
   }
 
-      .header{
+      /* .header{
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 4.5em;
         font-weight: bolder;
         color: #01ac26;
         align-self: center;
         justify-self: center;
-      }
+      } */
 
 
-      #user-section{
+      /* #user-section{
         margin: 2em;
         padding-bottom: 2em;
         display: flex;
@@ -82,7 +81,7 @@ scoutbtn{
         color: #01ac26;
         flex-flow: column nowrap;
         align-items: center;
-      }
+      } */
 
         #den-list{
           margin: 1em;
@@ -95,7 +94,7 @@ scoutbtn{
           font-size: 1.25em;
           width: 14em;
           height: 1.5em;
-          margin-bottom: 1em;
+          margin-bottom: .5em;
         }
 
         #submit{
