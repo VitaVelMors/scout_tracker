@@ -43,17 +43,16 @@ body{
   }
 
 
-.scoutbtn:hover,
-.scoutbtn:focus{
+.scoutbtn:hover {
     color: #790202;
     border: #790202 solid 0.2em;
     box-shadow: 0 0 1em 0.5em #790202;
   }
   
-.scoutbtn:hover:focus::before{
+/* .scoutbtn:hover:focus::before{
     background-color: #790202;
     opacity: 1;
-  }
+  } */
 
   #main{
     height: auto;
