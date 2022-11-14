@@ -1,8 +1,17 @@
 body{
   background-color: wheat;
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
   width: 100%
+}
+
+h1{
+  width: 100%;
+  border: .4em solid forestgreen;
+  align-items: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 3em;
+  font-weight: bold;
 }
 
   #add-block{
@@ -10,6 +19,9 @@ body{
   margin-bottom: 1em;
   padding: .75em;
   border: .4em solid forestgreen;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
   }
 
   #search{
@@ -17,6 +29,9 @@ body{
     margin-bottom: 1em;
     padding: .75em;
     border: .4em solid forestgreen;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
   }
 
 .scoutbtn{
@@ -101,12 +116,12 @@ body{
           height: 1.5em;
           margin-bottom: 1em;
         }
-
+/* 
         #submit{
           width: 8em;
           margin-bottom: 1em;
           font-size: 1.25em;
-        }
+        } */
       
 
 
