@@ -1,7 +1,6 @@
 body{
   background-color: black;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-flow: column nowrap;
 }
@@ -13,6 +12,15 @@ body{
     background-color: #fff;
     z-index: 2;
   }
+
+#add-block{
+  align-self: right;
+
+}
+
+#search{
+  align-self: left;
+}
 
 scoutbtn{
     display: inline-block;
