@@ -1,5 +1,5 @@
 body{
-  background-color: black;
+  background-color: tan;
   display: flex;
   flex-flow: column;
 }
@@ -19,7 +19,7 @@ align-self: right;
   #search{
     align-self: left;
   }
-  
+
 .scoutbtn{
     display: inline-block;
     background-color: transparent;

@@ -3,26 +3,6 @@ const ENV = "production";
 let ApiURL = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
 console.log("API:", ApiURL);
 
-
-const stars = 400
-
-for (let i =0; i < stars; i++) {
-  let star = document.createElement("div")
-  star.className = 'stars'
-  var xy = randomPosition();
-  star.style.top = xy[0] + 'px'
-  star.style.left = xy[1] + 'px'
-  document.body.append(star)
-}
-
-function randomPosition() {
-  var y = window.innerWidth
-  var x = window.innerHeight
-  var randomX = Math.floor(Math.random() * x)
-  var randomY = Math.floor(Math.random() * y)
-  return [randomX, randomY]
-}
-
 fetch(`${ApiUrl}/api/scouts`)
     .then(response => response.json())
     .then(data => {
@@ -65,28 +45,28 @@ fetch(`${ApiUrl}/api/scouts`)
 
 
 
-// function getData(data){
-//   prevNext(data);
-//   if (data.results){
-//     $.each(data.results, function(index, value){
-//       $(`#results`).append(
-//         $(`<button id = 'childBtn' class = 'btn'>${value.name || value.title}</button>`).on('click', function (e){
-//           $(`#results`).empty()
-//           $(`#footer`).empty()
-//           $(`#results`).append(
-//             $(`<h2 class='header'>${value.name || value.title}</h2>`))
-//             $.each(value, function(key, value){
-//               $(`#results`).append(
-//               $(`<ul id = "link-list"></ul>`).append(
-//                 $(`<li class = "key">${key}: ${value}</li>`)
-//               )
-//             )
-//           })
-//         })
-//       )
-//     })
-//   }
-// }
+function getData(data){
+  prevNext(data);
+  if (data.results){
+    $.each(data.results, function(index, value){
+      $(`#results`).append(
+        $(`<button id = 'childBtn' class = 'btn'>${value.name}</button>`).on('click', function (e){
+          $(`#results`).empty()
+          $(`#footer`).empty()
+          $(`#results`).append(
+            $(`<h2 class='header'>${value.name}</h2>`))
+            $.each(value, function(key, value){
+              $(`#results`).append(
+              $(`<ul id = "link-list"></ul>`).append(
+                $(`<li class = "key">${key}: ${value}</li>`)
+              )
+            )
+          })
+        })
+      )
+    })
+  }
+}
 
 // function prevNext(data){
 //   if ($(`#results`) != ''){
