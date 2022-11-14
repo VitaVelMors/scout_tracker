@@ -13,7 +13,7 @@ body{
     z-index: 2;
   }
 
-scoutbtn{
+.scoutbtn{
     display: inline-block;
     background-color: transparent;
     cursor: pointer;
@@ -94,7 +94,7 @@ scoutbtn{
           font-size: 1.25em;
           width: 14em;
           height: 1.5em;
-          margin-bottom: .5em;
+          margin-bottom: 1em;
         }
 
         #submit{
