@@ -13,15 +13,6 @@ body{
     z-index: 2;
   }
 
-#add-block{
-  align-self: right;
-
-}
-
-#search{
-  align-self: left;
-}
-
 scoutbtn{
     display: inline-block;
     background-color: transparent;
@@ -56,9 +47,6 @@ scoutbtn{
   
 .scoutbtn:hover:focus::before{
     background-color: #0077ff;
-    opacity: 1;
-  }
-.scoutbtn:hover:focus::after{
     opacity: 1;
   }
 

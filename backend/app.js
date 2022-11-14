@@ -53,7 +53,7 @@ app.post('/api/scouts', cors(corsOptions), (req, res) => {
   let age = scout.age;
   async function postScout(){
     try{
-      if (name === '' || type === '') {
+      if (name === '' || age === '') {
         console.log(`I don't think so buddy!`);
         res.sendStatus(400, "Bad Request");
       } else {
@@ -87,7 +87,7 @@ app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   patchFood()
 })
 
-app.delete('/scout/:scout_id', cors(corsOptions), (req,res) => {
+app.delete('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   console.log(req.params.id)
   async function deleteFood(){
     try{
