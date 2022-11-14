@@ -8,13 +8,14 @@ body{
   #add-block{
   width: 45%;
   margin-bottom: 1em;
-  align-self: right;
+  padding: .75em;
   border: .4em solid forestgreen;
   }
 
   #search{
     width: 45%;
-    align-self: left;
+    margin-bottom: 1em;
+    padding: .75em;
     border: .4em solid forestgreen;
   }
 
@@ -24,17 +25,17 @@ body{
     cursor: pointer;
     text-decoration: none;
     height: auto;
-    border: darkolivegreen solid 0.2em;
-    color: darkolivegreen;
+    border: darkgreen solid 0.2em;
+    color: darkgreen;
     border-radius: 0.5em;
 
     padding: 0.25em 1em;
 
     text-shadow: 0 0 0.125em hsl(0 0 100% / 0.5),
-    0 0 0.45em darkolivegreen;
+    0 0 0.45em darkgreen;
 
-    box-shadow: inset 0 0 0.5em 0 darkolivegreen,
-    0 0 0.5em 0 darkolivegreen;
+    box-shadow: inset 0 0 0.5em 0 darkgreen,
+    0 0 0.5em 0 darkgreen;
 
     position: relative;
 
@@ -44,13 +45,13 @@ body{
 
 .scoutbtn:hover,
 .scoutbtn:focus{
-    color: #0077ff;
-    border: #0077ff solid 0.2em;
-    box-shadow: 0 0 1em 0.5em #0077ff;
+    color: #790202;
+    border: #790202 solid 0.2em;
+    box-shadow: 0 0 1em 0.5em #790202;
   }
   
 .scoutbtn:hover:focus::before{
-    background-color: #0077ff;
+    background-color: #790202;
     opacity: 1;
   }
 
@@ -58,7 +59,7 @@ body{
     height: auto;
     width: 95vw;
     display: flex;
-    border: 0.35em solid darkolivegreen;
+    border: 0.35em solid darkgreen;
     border-radius: 2.5em;
     align-items: center;
     justify-items: center;
@@ -71,7 +72,7 @@ body{
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 4.5em;
         font-weight: bolder;
-        color: darkolivegreen;
+        color: darkgreen;
         align-self: center;
         justify-self: center;
       } */
@@ -83,7 +84,7 @@ body{
         display: flex;
         width: auto;
         height: auto;
-        color: darkolivegreen;
+        color: darkgreen;
         flex-flow: column nowrap;
         align-items: center;
       } */
@@ -156,14 +157,14 @@ body{
             width: inherit;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.5em;
-            color: darkolivegreen;
+            color: darkgreen;
           }
 
       #footer{
         display: flex;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: bolder;
-        color: darkolivegreen;
+        color: darkgreen;
         align-self: center;
         justify-self: center;
         flex-flow: row nowrap;
