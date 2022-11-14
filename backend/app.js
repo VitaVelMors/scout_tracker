@@ -105,13 +105,6 @@ app.delete('/scout/:scout_id', cors(corsOptions), (req,res) => {
   deleteFood()
 });
 
-
-
-
-
-
-
-
 app.listen(port, () =>{
   console.log(`I'm Watching You On Port ${port}`)
 })

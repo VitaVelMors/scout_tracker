@@ -3,6 +3,42 @@ const ENV = "production";
 let ApiURL = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
 console.log("API:", ApiURL);
 
+
+const stars = 400
+
+for (let i =0; i < stars; i++) {
+  let star = document.createElement("div")
+  star.className = 'stars'
+  var xy = randomPosition();
+  star.style.top = xy[0] + 'px'
+  star.style.left = xy[1] + 'px'
+  document.body.append(star)
+}
+
+function randomPosition() {
+  var y = window.innerWidth
+  var x = window.innerHeight
+  var randomX = Math.floor(Math.random() * x)
+  var randomY = Math.floor(Math.random() * y)
+  return [randomX, randomY]
+}
+
+
+
+function searchBtns(data){ 
+  $.each(data, function(key, value){
+    $('#search-links').append(
+      $(`<button id = 'searchBtn'class='btn'>${key}</button>`).on('click', function (e){
+        $(`#results`).empty()
+        $(`#footer`).empty()
+        $.get(value, (data) => {
+          getData(data);
+        })
+      })
+    )
+  })   
+}
+
 fetch(`${ApiUrl}/api/scouts`)
     .then(response => response.json())
     .then(data => {
@@ -42,42 +78,7 @@ fetch(`${ApiUrl}/api/scouts`)
   
   })
 
-// const stars = 400
 
-// for (let i =0; i < stars; i++) {
-//   let star = document.createElement("div")
-//   star.className = 'stars'
-//   var xy = randomPosition();
-//   star.style.top = xy[0] + 'px'
-//   star.style.left = xy[1] + 'px'
-//   document.body.append(star)
-// }
-
-// function randomPosition() {
-//   var y = window.innerWidth
-//   var x = window.innerHeight
-//   var randomX = Math.floor(Math.random() * x)
-//   var randomY = Math.floor(Math.random() * y)
-//   return [randomX, randomY]
-// }
-
-// $.get(`https://swapi.dev/api/`, (data) => {
-//   searchBtns(data);
-// })
-
-// function searchBtns(data){ 
-//   $.each(data, function(key, value){
-//     $('#search-links').append(
-//       $(`<button id = 'searchBtn'class='btn'>${key}</button>`).on('click', function (e){
-//         $(`#results`).empty()
-//         $(`#footer`).empty()
-//         $.get(value, (data) => {
-//           getData(data);
-//         })
-//       })
-//     )
-//   })   
-// }
 
 
 // function getData(data){
@@ -131,3 +132,8 @@ fetch(`${ApiUrl}/api/scouts`)
 //     }
 //   }
 // }
+
+
+// $.get(`https://swapi.dev/api/`, (data) => {
+//   searchBtns(data);
+// })
