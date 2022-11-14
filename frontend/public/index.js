@@ -19,7 +19,7 @@ fetch(`${ApiUrl}/api/scouts`)
       let age = document.getElementById("age").value;
       
       let scout = {
-          "name": first,
+          "name": name,
           "age": age
       }
       
@@ -33,7 +33,7 @@ fetch(`${ApiUrl}/api/scouts`)
           if(response.status == 201){
               var scoutElement = document.createElement('li');
               scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
-              classList.appendChild(scoutElement);
+              denList.appendChild(scoutElement);
           }else {
               alert("something went HORRIBLY WRONG!!!", response);
           }
