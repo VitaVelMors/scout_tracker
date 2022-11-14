@@ -1,5 +1,5 @@
 body{
-  background-color: tan;
+  background-color: rgb(201, 178, 148);
   display: flex;
   flex-flow: column;
 }
@@ -13,10 +13,12 @@ body{
   }
 
   #add-block{
-align-self: right;
+  width: 45%;
+  align-self: right;
   }
 
   #search{
+    width: 45%;
     align-self: left;
   }
 
