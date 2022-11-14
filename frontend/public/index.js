@@ -23,22 +23,6 @@ function randomPosition() {
   return [randomX, randomY]
 }
 
-
-
-function searchBtns(data){ 
-  $.each(data, function(key, value){
-    $('#search-links').append(
-      $(`<button id = 'searchBtn'class='btn'>${key}</button>`).on('click', function (e){
-        $(`#results`).empty()
-        $(`#footer`).empty()
-        $.get(value, (data) => {
-          getData(data);
-        })
-      })
-    )
-  })   
-}
-
 fetch(`${ApiUrl}/api/scouts`)
     .then(response => response.json())
     .then(data => {
@@ -46,7 +30,7 @@ fetch(`${ApiUrl}/api/scouts`)
             var scoutElement = document.createElement('li');
             scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
             // console.log(scoutElement);
-            classList.appendChild(scoutElement);
+            denList.appendChild(scoutElement);
         });
     });
 

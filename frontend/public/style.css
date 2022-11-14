@@ -1,8 +1,7 @@
 body{
   background-color: black;
   display: flex;
-  justify-content: center;
-  flex-flow: column nowrap;
+  flex-flow: column;
 }
 
   .stars {
@@ -13,6 +12,14 @@ body{
     z-index: 2;
   }
 
+  #add-block{
+align-self: right;
+  }
+
+  #search{
+    align-self: left;
+  }
+  
 .scoutbtn{
     display: inline-block;
     background-color: transparent;
