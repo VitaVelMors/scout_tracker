@@ -14,7 +14,7 @@ body{
     z-index: 2;
   }
 
-  .btn{
+ #add-scout{
     display: inline-block;
     background-color: transparent;
     cursor: pointer;
@@ -40,18 +40,18 @@ body{
   }
 
 
-  .btn:hover,
-  .btn:focus{
+  #add-scout:hover,
+  #add-scout:focus{
     color: #0077ff;
     border: #0077ff solid 0.2em;
     box-shadow: 0 0 1em 0.5em #0077ff;
   }
   
-  .btn:hover:focus::before{
+  #add-scout:hover:focus::before{
     background-color: #0077ff;
     opacity: 1;
   }
-  .btn:hover:focus::after{
+  #add-scout:hover:focus::after{
     opacity: 1;
   }
 
