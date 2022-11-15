@@ -11,7 +11,8 @@ fetch(`${apiUrl}/api/scouts`)
       data.forEach(scout => {
           let scoutElement = document.createElement('button')
           console.log(scoutElement);
-          scoutElement.innerHTML = `Id: ${scout.scout_id} Name: ${scout.name} Age: ${scout.age}`;
+          scoutElement.classList.add("each-scout")
+          scoutElement.innerHTML = `${scout.name}`;
           den.appendChild(scoutElement);
       });            
   })
