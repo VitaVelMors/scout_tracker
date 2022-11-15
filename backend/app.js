@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 const config = require('./config.js')[process.env.NODE_ENV]
 const cors = require('cors');
 const corsOptions={
-  origin: 'https://scout-tracker.onrender.com/',
+  origin: 'https://scout-tracker-live.onrender.com',
   optionSuccessStatus: 200
 };
 
