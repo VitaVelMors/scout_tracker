@@ -1,5 +1,6 @@
 
 const apiURL = "https://scout-tracker.onrender.com";
+
 console.log("API:", apiURL);
 
 let denList = document.getElementById("den")

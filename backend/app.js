@@ -1,6 +1,6 @@
 const express = require('express');
 const { Pool } = require('pg');
-const config = require('./config.js')[process.env.NODE_ENV]
+const config = require('./config.js')[process.env.NODE_ENV || "dev"];
 const cors = require('cors');
 const corsOptions={
   origin: 'https://scout-tracker-live.onrender.com',

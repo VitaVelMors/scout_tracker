@@ -18,6 +18,7 @@ body{
   height: 30em;
   border: .5em solid darkgreen;
   padding: 1em;
+  margin-bottom: 1em;
 }
 
 h1{
@@ -35,6 +36,7 @@ h1{
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
+  padding-bottom: 2em;
 }
   #search{
     display: flex;
@@ -53,7 +55,7 @@ h1{
     display: flex;
     width: 45%;
     margin-left: auto;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
     padding: .5em;
     flex-flow: column nowrap;
     text-align: right;
