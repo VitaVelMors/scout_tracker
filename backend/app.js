@@ -70,7 +70,7 @@ app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
-  async function patchFood(){
+  async function patchScout(){
     try{
       const result = await pool.query(`UPDATE scouts SET
         name = COALESCE(NULLIF('${name}', ''), name),
@@ -82,12 +82,12 @@ app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
       console.error(e.stack);
     }
   }
-  patchFood()
+  patchScout()
 })
 
 app.delete('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   console.log(req.params.id)
-  async function deleteFood(){
+  async function deleteScout(){
     try{
       const result = await pool.query('DELETE FROM scouts WHERE scout_id = $1', [req.params.name]);
       // if (result.rows.length === 0) {
@@ -100,7 +100,16 @@ app.delete('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
       console.error(e.stack);
     }
   }
-  deleteFood()
+  deleteScout()
+});
+
+app.get('/api/achievements', cors(corsOptions), (req, res) => {
+  pool.query('SELECT * FROM achievements')
+    .then(result => {
+      console.log(result.rows[0]);
+      res.send(result.rows);
+    })
+    .catch(e => console.error(e.stack))
 });
 
 app.listen(port, () =>{
