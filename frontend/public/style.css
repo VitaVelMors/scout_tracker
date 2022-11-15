@@ -9,13 +9,10 @@ body{
 }
 
 #header{
-  background-image: url('../../scouting.png');
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  height: 30em;
+  height: auto;
   border: .5em solid darkgreen;
   padding: 1em;
   margin-bottom: 1em;
