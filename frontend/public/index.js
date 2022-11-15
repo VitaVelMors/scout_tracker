@@ -9,21 +9,21 @@ fetch(`${apiUrl}/api/scouts`)
   .then(response => response.json())
   .then(data => {
       data.forEach(scout => {
-          let scoutElement = document.createElement(`<button type="button" class="each-scout">${scout.name}</button>`);
+          let scoutElement = document.createElement('li')
           console.log(scoutElement);
-          // scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
+          scoutElement.innerHTML = `Id: ${scout.scout_id} /n Name: ${scout.name} /n Age: ${scout.age}`;
           den.appendChild(scoutElement);
       });            
   })
-  .then(scoutElement.addEventListener("click", event =>{
-      den.empty();
-      // fetch(`${apiUrl}/api/scouts/:id`)
-      den.appendChild(`<h2>${scout.name}, ${scout.age}, ${scout.scout_id}</h2>`, 
-      fetch(`${apiUrl}/api/achievements`)
-        .then(response => response.json())
-        .then(data => {
-          data.forEach(ach => {
-            console.log(ach)
+  // .then(scoutElement.addEventListener("click", event =>{
+  //     den.empty();
+  //     // fetch(`${apiUrl}/api/scouts/:id`)
+  //     den.appendChild(`<h2>${scout.name}, ${scout.age}, ${scout.scout_id}</h2>`, 
+  //     fetch(`${apiUrl}/api/achievements`)
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         data.forEach(ach => {
+  //           console.log(ach)
               // let achElement = document.createElement(`<table>
               //                                         <tr>
               //                                         <th>ach_id</th>
@@ -35,11 +35,11 @@ fetch(`${apiUrl}/api/scouts`)
               //                                         <td>ach.ach_name[0]</td>
               //                                         <td>ach.comp_date[0]</td>`);
               // console.log(achElement);
-          })
+  //         })
 
-    })
-    )
-  }))
+  //   })
+  //   )
+  // }))
 
 
 
