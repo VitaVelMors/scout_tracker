@@ -1,14 +1,15 @@
 const ENV = "production";
 
-let ApiURL = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
-console.log("API:", ApiURL);
+let apiURL = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
+console.log("API:", apiURL);
 
-fetch(`${ApiUrl}/api/scouts`)
+fetch(`${apiUrl}/api/scouts`)
     .then(response => response.json())
     .then(data => {
         data.forEach(scout => {
             var scoutElement = document.createElement('li');
             console.log(scoutElement);
+            scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
             den.appendChild(scoutElement);
         });
     });
