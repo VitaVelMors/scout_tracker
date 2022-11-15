@@ -1,7 +1,7 @@
 const ENV = "dev";
 const apiUrl = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
 
-console.log("API:", apiURL);
+console.log("API:", apiUrl);
 
 let denList = document.getElementById("den")
 
