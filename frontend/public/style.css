@@ -126,7 +126,7 @@ h1{
 
   #den{
     display: flex;
-    width: 98%;
+    width: 99%;
     height: auto;
     background-color: inherit;
     justify-content: center;
@@ -134,6 +134,7 @@ h1{
     margin-bottom: 3em;
     text-align: center;
     border: .4em solid darkgreen;
+    flex-flow: row wrap;
   }
 
   .each-scout{
@@ -141,10 +142,10 @@ h1{
     background-color: transparent;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
-    height: 3em;
-    width: 10em;
+    height: 10em;
+    width: 15em;
     border: darkgreen solid 0.25em;
     color: darkgreen;
     border-radius: 0.5em;
