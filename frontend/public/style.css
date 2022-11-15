@@ -7,35 +7,35 @@ body{
 
 h1{
   width: 100%;
-  border: .4em solid forestgreen;
-  align-items: center;
+  border: .1em solid forestgreen;
+  text-align: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 4em;
   font-weight: bold;
 }
 
-  #add-block{
-  width: 45%;
-  margin-bottom: 1em;
-  padding: .75em;
-  align-items: right;
-  border: .4em solid forestgreen;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 1.25em;
-  font-weight: bold;
-  }
-
   #search{
     width: 45%;
-    margin-bottom: 1em;
+    margin: auto;
     padding: .75em;
     border: .4em solid forestgreen;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.25em;
     font-weight: bold;
   }
+  
+  #add-block{
+    width: 45%;
+    margin: auto;
+    padding: .75em;
+    align-items: right;
+    border: .4em solid forestgreen;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    }
 
-.scoutbtn{
+  .scoutbtn{
     display: inline-block;
     background-color: transparent;
     cursor: pointer;
@@ -70,7 +70,7 @@ h1{
     opacity: 1;
   } */
 
-  #main{
+  /* #main{
     height: auto;
     width: 95vw;
     display: flex;
@@ -81,7 +81,7 @@ h1{
     flex-flow: column nowrap;
     margin-bottom: 2em;
 
-  }
+  } */
 
       /* .header{
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -104,15 +104,20 @@ h1{
         align-items: center;
       } */
 
-        #den-list{
-          margin: 1em;
-          padding: 1em;
-          font-size: 26px;
+        #den{
+          display: flex;
+          width: 98%;
+          height: auto;
+          background-color: inherit;
+          justify-content: center;
+          gap: 3em;
+          margin-bottom: 3em;
           text-align: center;
+          border: .4em solid forestgreen;
         }
         
         input{
-          font-size: 1.25em;
+          font-size: 1.35em;
           width: 14em;
           height: 1.5em;
           margin-bottom: 1em;
@@ -126,7 +131,7 @@ h1{
       
 
 
-        #search-links{
+        /* #search-links{
           height: auto;
           width: auto;
           margin-bottom: 1em;
@@ -136,26 +141,14 @@ h1{
           justify-items: center;
           align-self: center;
           gap: 4em;
-        }
+        } */
 
 
-          #searchBtn{
+          /* #searchBtn{
             font-size: 1.25em;
             width: 8em;
             margin-bottom: 1em;
-          }
-  
-        #results {
-          display: flex;
-          width: 95vw;
-          height: auto;
-          background-color: inherit;
-          flex-flow: row wrap;
-          align-content: center;
-          justify-content: center;
-          gap: 3em;
-          margin-bottom: 3em;
-        }
+          } */
 
           #childBtn{
             font-size: 2em;
