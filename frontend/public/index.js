@@ -7,8 +7,8 @@ fetch(`${ApiUrl}/api/scouts`)
     .then(response => response.json())
     .then(data => {
         data.forEach(scout => {
-            var scoutElement = document.createElement(`<button id = 'childBtn' class = 'scoutbtn'>${scout.name}</button>`);
-            // console.log(scoutElement);
+            var scoutElement = document.createElement('li');
+            console.log(scoutElement);
             den.appendChild(scoutElement);
         });
     });
