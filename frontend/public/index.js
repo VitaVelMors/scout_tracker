@@ -1,4 +1,4 @@
-const ENV = "dev";
+const ENV = "production";
 const apiUrl = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
 
 console.log("API:", apiUrl);
