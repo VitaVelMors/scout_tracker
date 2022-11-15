@@ -1,6 +1,4 @@
-const ENV = "production";
-
-let apiURL = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
+const apiURL = "https://scout-tracker.onrender.com";
 console.log("API:", apiURL);
 
 fetch(`${apiUrl}/api/scouts`)
@@ -14,49 +12,33 @@ fetch(`${apiUrl}/api/scouts`)
         });
     });
 
-//     var submit = document.getElementById('add-scout').addEventListener("click", event => {
-//       let name = document.getElementById("name").value;
-//       let age = document.getElementById("age").value;
+    var submit = document.getElementById('add-scout').addEventListener("click", event => {
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
       
-//       let scout = {
-//           "name": name,
-//           "age": age
-//       }
-
-//       ).on('click', function (e){
-//         $(`#results`).append(
-//           $(`<h2 class='header'>${scout.name}</h2>`))
-//           $.each(value, function(key, value){
-//             $(`#results`).append(
-//             $(`<ul id = "link-list"></ul>`).append(
-//               $(`<li class = "key">${key}: ${value}</li>`)
-//             )
-//           )
-//         })
-//       })
-//     )
-//   })
-// }
-// };
+      let scout = {
+          "name": name,
+          "age": age
+      }
       
-//       fetch(`${ApiUrl}/api/scouts`, {
-//           method: 'POST',
-//           mode: "cors",
-//           headers: { 'Content-Type': 'application/json' },
-//           body: JSON.stringify(scout)
-//       })
-//       .then(response => {
-//           if(response.status == 201){
-//               var scoutElement = document.createElement(`<button id = 'childBtn' class = 'scoutbtn'>${scout.name}</button>`);
-//               scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
-//               denList.appendChild(scoutElement);
-//           }else {
-//               alert("something went HORRIBLY WRONG!!!", response);
-//           }
-//       })
-//       .catch(error => console.error(error));
+      fetch(`${apiUrl}/api/scouts`, {
+          method: 'POST',
+          mode: "cors",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(scout)
+      })
+      .then(response => {
+          if(response.status == 201){
+              var scoutElement = document.createElement(`<button id = 'childBtn' class = 'scoutbtn'>${scout.name}</button>`);
+              // scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
+              den.appendChild(scoutElement);
+          }else {
+              alert("something went HORRIBLY WRONG!!!", response);
+          }
+      })
+      .catch(error => console.error(error));
   
-//   })
+  })
 
 
 
