@@ -1,5 +1,8 @@
+
 const apiURL = "https://scout-tracker.onrender.com";
 console.log("API:", apiURL);
+
+let denList = document.getElementById("den")
 
 fetch(`${apiUrl}/api/scouts`)
     .then(response => response.json())
@@ -39,63 +42,3 @@ fetch(`${apiUrl}/api/scouts`)
       .catch(error => console.error(error));
   
   })
-
-
-
-
-// function getData(data){
-//   prevNext(data);
-//   if (data.results){
-//     $.each(data.results, function(index, value){
-//       $(`denList`).append(
-//         $(`<button id = 'childBtn' class = 'btn'>${value.name}</button>`).on('click', function (e){
-          
-//           $(`#footer`).empty()
-//           $(`#results`).append(
-//             $(`<h2 class='header'>${scout.name}</h2>`))
-//             $.each(value, function(key, value){
-//               $(`#results`).append(
-//               $(`<ul id = "link-list"></ul>`).append(
-//                 $(`<li class = "key">${key}: ${value}</li>`)
-//               )
-//             )
-//           })
-//         })
-//       )
-//     })
-//   }
-// }
-
-// // function prevNext(data){
-// //   if ($(`#results`) != ''){
-// //     if(data.previous){
-// //       $(`#footer`).append(
-// //         $(`<button id = 'prevNext' class='btn'> << Previous </button>`).on('click', function(e){
-// //           $(`#results`).empty()
-// //           $(`#footer`).empty()
-// //           $.get(data.previous, (data) =>{
-// //             console.log(data)    
-// //             getData(data);
-// //           })
-// //         })
-// //       )
-// //     }
-// //     if(data.next){
-// //       $(`#footer`).append(
-// //         $(`<button id = 'prevNext' class='btn'> Next >> </button>`).on('click', function(e){
-// //           $(`#results`).empty()
-// //           $(`#footer`).empty()
-// //           $.get(data.next, (data) =>{
-// //             console.log(data)    
-// //             getData(data);
-// //           })
-// //         })
-// //       )
-// //     }
-// //   }
-// // }
-
-
-// // $.get(`https://swapi.dev/api/`, (data) => {
-// //   searchBtns(data);
-// // })

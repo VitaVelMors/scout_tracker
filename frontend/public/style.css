@@ -34,16 +34,14 @@ h1{
 #user-bar{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   width: 100%;
 }
   #search{
     display: flex;
-    /* align-self: flex-start; */
+    align-self: flex-start;
     width: 45%;
     margin-right: auto;
     padding: .75em;
-    /* border: .4em solid darkgreen; */
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.25em;
     font-weight: bold;
@@ -65,7 +63,7 @@ h1{
 
     label{
       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 2.5em;
+      font-size: 1.5em;
       font-weight: bold;
       color: black;
     }
@@ -102,136 +100,34 @@ h1{
     border: #790202 solid 0.2em;
     box-shadow: 0 0 1em 0.5em #790202;
   }
-  
-/* .scoutbtn:hover:focus::before{
-    background-color: #790202;
-    opacity: 1;
-  } */
 
-  /* #main{
-    height: auto;
-    width: 95vw;
+  #den{
     display: flex;
-    border: 0.35em solid darkgreen;
-    border-radius: 2.5em;
-    align-items: center;
-    justify-items: center;
-    flex-flow: column nowrap;
-    margin-bottom: 2em;
+    width: 98%;
+    height: auto;
+    background-color: inherit;
+    justify-content: center;
+    gap: 3em;
+    margin-bottom: 3em;
+    text-align: center;
+    border: .4em solid darkgreen;
+  }
+  
+  input{
+    font-size: 1.5em;
+    width: 12em;
+    height: 1.5em;
+    border: .25em solid darkgreen;
+  }
 
-  } */
-
-      /* .header{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 4.5em;
-        font-weight: bolder;
-        color: darkgreen;
-        align-self: center;
-        justify-self: center;
-      } */
-
-
-      /* #user-section{
-        margin: 2em;
-        padding-bottom: 2em;
-        display: flex;
-        width: auto;
-        height: auto;
-        color: darkgreen;
-        flex-flow: column nowrap;
-        align-items: center;
-      } */
-
-        #den{
-          display: flex;
-          width: 98%;
-          height: auto;
-          background-color: inherit;
-          justify-content: center;
-          gap: 3em;
-          margin-bottom: 3em;
-          text-align: center;
-          border: .4em solid darkgreen;
-        }
-        
-        input{
-          font-size: 1.5em;
-          width: 12em;
-          height: 1.5em;
-          border: .25em solid darkgreen;
-        }
-
-        input:hover{
-          color: #790202;
-          border: #790202 solid 0.1em;
-          box-shadow: 0 0 .5em 0.3em #790202;
-        }
-        
-        input:focus{
-          color: #790202;
-          border: #790202 solid 0.1em;
-          box-shadow: 0 0 .5em 0.3em #790202;
-        }
-/* 
-        #submit{
-          width: 8em;
-          margin-bottom: 1em;
-          font-size: 1.25em;
-        } */
-      
-
-
-        /* #search-links{
-          height: auto;
-          width: auto;
-          margin-bottom: 1em;
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          justify-items: center;
-          align-self: center;
-          gap: 4em;
-        } */
-
-
-          /* #searchBtn{
-            font-size: 1.25em;
-            width: 8em;
-            margin-bottom: 1em;
-          } */
-
-          #childBtn{
-            font-size: 2em;
-            width: 15em;
-          }
-      
-          #link-list{
-            width: inherit;
-            list-style-type: none;
-            align-items: center;
-          }
-
-          .key {
-            width: inherit;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.5em;
-            color: darkgreen;
-          }
-
-      #footer{
-        display: flex;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-weight: bolder;
-        color: darkgreen;
-        align-self: center;
-        justify-self: center;
-        flex-flow: row nowrap;
-        padding-bottom: 2em;
-        gap: 50em;
-      }
-
-      #prevNext{
-        font-size: 1.25em;
-        width: 15em;
-      }
-
+  input:hover{
+    color: #790202;
+    border: #790202 solid 0.1em;
+    box-shadow: 0 0 .5em 0.3em #790202;
+  }
+  
+  input:focus{
+    color: #790202;
+    border: #790202 solid 0.1em;
+    box-shadow: 0 0 .5em 0.3em #790202;
+  }
