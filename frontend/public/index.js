@@ -9,14 +9,14 @@ fetch(`${apiUrl}/api/scouts`)
     .then(response => response.json())
     .then(data => {
         data.forEach(scout => {
-            var scoutElement = document.createElement('li');
+            let scoutElement = document.createElement('li');
             console.log(scoutElement);
             scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
             den.appendChild(scoutElement);
         });
     });
 
-    var submit = document.getElementById('add-scout').addEventListener("click", event => {
+    let submit = document.getElementById('add-scout').addEventListener("click", event => {
       let name = document.getElementById("name").value;
       let age = document.getElementById("age").value;
       
@@ -33,7 +33,7 @@ fetch(`${apiUrl}/api/scouts`)
       })
       .then(response => {
           if(response.status == 201){
-              var scoutElement = document.createElement(`<button id = 'childBtn' class = 'scoutbtn'>${scout.name}</button>`);
+              var scoutElement = document.createElement('li');
               // scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
               den.appendChild(scoutElement);
           }else {

@@ -1,18 +1,18 @@
 const express = require('express');
 const { Pool } = require('pg');
 const config = require('./config.js')[process.env.NODE_ENV || "dev"];
-// const cors = require('cors');
-// const corsOptions={
-//   origin: 'https://scout-tracker.onrender.com',
-//   optionSuccessStatus: 200
-// };
+const cors = require('cors');
+const corsOptions={
+  origin: 'https://scout-tracker-live.onrender.com',
+  optionSuccessStatus: 200
+};
 
 const pool = new Pool({connectionString:config.connectionString});
 const app = express();
 const port = 3000;
 
-// app.options('*', corsOptions);
-// app.use(corsOptions);
+app.options('*', corsOptions);
+app.use(corsOptions);
 app.use(express.json());
 
 app.get('/', (req, res) =>{
