@@ -2,6 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const config = require('./config.js')[process.env.NODE_ENV || "dev"];
 const cors = require('cors');
+const { response } = require('express');
 const corsOptions={
   origin: 'https://scout-tracker-live.onrender.com',
   optionSuccessStatus: 200
@@ -51,13 +52,14 @@ app.post('/api/scouts', (req, res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
+  let image = scout.image;
   async function postScout(){
     try{
-      if (name === undefined || age === undefined) {
-        alert(`You must enter both a full name and an age to add a scout!`);
+      if (name === undefined || age === undefined || image === undefined) {
+        alert(`You must enter a full name, age and image url to add a scout!`, response);
         res.sendStatus(400, "Bad Request");
       } else {
-      const result = await pool.query(`INSERT INTO scouts (name, age) VALUES ('${name}', ${age}) RETURNING *`);
+      const result = await pool.query(`INSERT INTO scouts (name, age, image) VALUES ('${name}', ${age}, '${image})`);
       res.send(result.rows);
       }
     }
@@ -92,11 +94,7 @@ app.delete('/api/scouts/:name', (req,res) => {
   async function deleteScout(){
     try{
       const result = await pool.query('DELETE FROM scouts WHERE name = $1', [req.params.name]);
-      // if (result.rows.length === 0) {
-      //   res.sendStatus(404, "Not Found");
-      // } else {
         res.send(await pool.query('SELECT * FROM scouts'));
-      // }
     }
     catch(e){
       console.error(e.stack);
@@ -114,6 +112,30 @@ app.get('/api/achievements', (req, res) => {
     .catch(e => console.error(e.stack))
 });
 
+app.patch('/api/achievements/:ach_name', (req,res) => {
+  let achievement = req.body;
+  let name = achievement.ach_name;
+  let date = achievement.comp_date;
+  let scoutId = achievement.scout_id;
+  async function patchDate(){
+    try{
+      const result = await pool.query(`UPDATE achievements SET
+        name = COALESCE(NULLIF('${name}', ''), name),
+        date = COALESCE(NULLIF('${date}', ''), date),
+        scout_id = COALESCE(NULLIF(${scoutId}, -1), scoutId)
+        WHERE ach_name = $1`, [req.params.ach_name]);
+        res.status(200).send(result.rows);
+    }
+    catch(e){
+      console.error(e.stack);
+    }
+  }
+  patchDate()
+})
+
+
 app.listen(port, () =>{
   console.log(`I'm Watching You On Port ${port}`)
 })
+
+module.exports = {getScout, postScout, patchScout, deleteScout, patchDate}

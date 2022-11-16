@@ -1,7 +1,6 @@
 const config = require("./config")[process.env.NODE_ENV || "dev"]
 const express = require('express');
-// const multer = require('multer');
-// const helpers = require('./helpers');
+import { getScout, postScout, patchScout, deleteScout } from "../backend/app";
 const PORT = config.port;
 
 const app = express();
