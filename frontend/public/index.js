@@ -12,7 +12,7 @@ fetch(`${apiUrl}/api/scouts`)
           let scoutElement = document.createElement('button')
           console.log(scoutElement);
           scoutElement.classList.add("each-scout")
-          scoutElement.style.background(`no-repeat cover url(${scout.image})`);
+          scoutElement.style.background = `no-repeat cover url(${scout.image})`;
           scoutElement.innerHTML = `${scout.name}`;
           den.appendChild(scoutElement);
       });            
