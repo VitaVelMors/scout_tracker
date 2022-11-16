@@ -9,7 +9,9 @@ body{
 }
 
 #header{
-  background: no-repeat cover url("images/scout-trooper.gif");
+  background-image: url("images/scout-trooper.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
