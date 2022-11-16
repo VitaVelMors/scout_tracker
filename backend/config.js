@@ -1,7 +1,7 @@
 module.exports = {
   dev:{ 
-    connectionString: "https://scout-tracker.onrender.com",
-    port: process.env.PORT
+    connectionString: 'postgresql://postgres:docker@127.0.0.1:5432/scoutdb',
+        port: '3001'
 },
 production:{
   connectionString: process.env.POSTGRES_CONNECTION_STRING + "?ssl=true",

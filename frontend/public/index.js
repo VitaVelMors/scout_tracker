@@ -1,7 +1,5 @@
-const { resourceLimits } = require("worker_threads");
-
-const ENV = "production";
-const apiUrl = ENV == "dev" ? "http://localhost:3000" : "https://scout-tracker.onrender.com";
+const ENV = "dev";
+const apiUrl = ENV == "dev" ? "http://localhost:3001" : "https://scout-tracker.onrender.com";
 
 console.log("API:", apiUrl);
 
