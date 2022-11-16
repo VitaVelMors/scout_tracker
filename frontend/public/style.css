@@ -15,7 +15,7 @@ body{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  height: 75em;
+  height: 50em;
   border: .5em solid darkgreen;
   padding: 1em;
   margin-bottom: 1em;
@@ -26,7 +26,7 @@ body{
 } */
 
 h1{
-  width: 100%;
+  width: auto;
   /* border: .1em solid darkgreen; */
   text-align: left;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -133,7 +133,7 @@ h1{
     gap: 3em;
     margin-bottom: 3em;
     text-align: center;
-    border: .4em solid darkgreen;
+    /* border: .4em solid darkgreen; */
     flex-flow: row wrap;
   }
 

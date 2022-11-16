@@ -12,6 +12,7 @@ fetch(`${apiUrl}/api/scouts`)
           let scoutElement = document.createElement('button')
           console.log(scoutElement);
           scoutElement.classList.add("each-scout")
+          scoutElement.style.background(`url(${scout.image}) no-repeat cover`)
           scoutElement.innerHTML = `${scout.name}`;
           den.appendChild(scoutElement);
       });            
@@ -55,7 +56,7 @@ fetch(`${apiUrl}/api/scouts`)
       
       fetch(`${apiUrl}/api/scouts`, {
           method: 'POST',
-          mode: "cors",
+          // mode: "cors",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(scout)
       })
