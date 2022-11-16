@@ -10,13 +10,13 @@ body{
 
 #header{
   background-image: url("images/scout-trooper.gif");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   height: 50em;
-  border: .5em solid darkgreen;
+  border: .5em solid #ffe81f;
   padding: 1em;
   margin-bottom: 1em;
 }
@@ -27,12 +27,12 @@ body{
 
 h1{
   width: auto;
-  /* border: .1em solid darkgreen; */
+  /* border: .1em solid #ffe81f; */
   text-align: left;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 5em;
   font-weight: bold;
-  color: darkgreen;
+  color: #ffe81f;
 }
 
 
@@ -77,19 +77,19 @@ h1{
       font-size: 1.5em;
       width: 12em;
       height: 1.5em;
-      border: .25em solid darkgreen;
+      border: .25em solid #ffe81f;
     }
   
     input:hover{
-      color: #790202;
-      border: #790202 solid 0.1em;
-      box-shadow: 0 0 .5em 0.3em #790202;
+      color: #0077ff;
+      border: #0077ff solid 0.1em;
+      box-shadow: 0 0 .5em 0.3em #0077ff;
     }
     
     input:focus{
-      color: #790202;
-      border: #790202 solid 0.1em;
-      box-shadow: 0 0 .5em 0.3em #790202;
+      color: #0077ff;
+      border: #0077ff solid 0.1em;
+      box-shadow: 0 0 .5em 0.3em #0077ff;
     }
 
   .scoutbtn{
@@ -101,17 +101,17 @@ h1{
     font-weight: bold;
     height: 3em;
     width: 10em;
-    border: darkgreen solid 0.25em;
-    color: darkgreen;
+    border: #ffe81f solid 0.25em;
+    color: #ffe81f;
     border-radius: 0.5em;
 
     padding: 0.25em 1em;
 
     text-shadow: 0 0 0.125em hsl(0 0 100% / 0.5),
-    0 0 0.45em darkgreen;
+    0 0 0.45em #ffe81f;
 
-    box-shadow: inset 0 0 0.5em 0 darkgreen,
-    0 0 0.5em 0 darkgreen;
+    box-shadow: inset 0 0 0.5em 0 #ffe81f,
+    0 0 0.5em 0 #ffe81f;
 
     position: relative;
 
@@ -119,9 +119,9 @@ h1{
   }
 
 .scoutbtn:hover {
-    color: #790202;
-    border: #790202 solid 0.2em;
-    box-shadow: 0 0 1em 0.5em #790202;
+    color: #0077ff;
+    border: #0077ff solid 0.2em;
+    box-shadow: 0 0 1em 0.5em #0077ff;
   }
 
   #den{
@@ -133,7 +133,7 @@ h1{
     gap: 3em;
     margin-bottom: 3em;
     text-align: center;
-    /* border: .4em solid darkgreen; */
+    /* border: .4em solid #ffe81f; */
     flex-flow: row wrap;
   }
 
@@ -146,17 +146,17 @@ h1{
     font-weight: bold;
     height: 10em;
     width: 15em;
-    border: darkgreen solid 0.25em;
-    color: darkgreen;
+    border: #ffe81f solid 0.25em;
+    color: #ffe81f;
     border-radius: 0.5em;
 
     padding: 0.25em 1em;
 
     text-shadow: 0 0 0.125em hsl(0 0 100% / 0.5),
-    0 0 0.45em darkgreen;
+    0 0 0.45em #ffe81f;
 
-    box-shadow: inset 0 0 0.5em 0 darkgreen,
-    0 0 0.5em 0 darkgreen;
+    box-shadow: inset 0 0 0.5em 0 #ffe81f,
+    0 0 0.5em 0 #ffe81f;
 
     position: relative;
 
@@ -164,7 +164,7 @@ h1{
   }
 
 .each-scout:hover {
-    color: #790202;
-    border: #790202 solid 0.2em;
-    box-shadow: 0 0 1em 0.5em #790202;
+    color: #0077ff;
+    border: #0077ff solid 0.2em;
+    box-shadow: 0 0 1em 0.5em #0077ff;
   }
