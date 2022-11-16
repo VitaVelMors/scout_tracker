@@ -23,7 +23,7 @@ fetch(`${apiUrl}/api/scouts`)
     let submit = document.getElementById('add-scout').addEventListener("click", event => {
       let name = document.getElementById("name").value;
       let age = document.getElementById("age").value;
-      let image = document.getElementById("image").value
+      let image = document.getElementById("image").value;
       
       let scout = {
           "name": name,
