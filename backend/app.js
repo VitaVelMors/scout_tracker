@@ -59,7 +59,7 @@ app.post('/api/scouts', (req, res) => {
         alert(`You must enter a full name, age and image url to add a scout!`, response);
         res.sendStatus(400, "Bad Request");
       } else {
-      const result = await pool.query(`INSERT INTO scouts (name, age, image) VALUES ('${name}', ${age}, '${image})`);
+      const result = await pool.query(`INSERT INTO scouts (name, age, image) VALUES ('${name}', ${age}, '${image}')`);
       res.send(result.rows);
       }
     }
@@ -74,12 +74,14 @@ app.patch('/api/scouts/:name', (req,res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
+  let image = scout.image;
   async function patchScout(){
     try{
       const result = await pool.query(`UPDATE scouts SET
         name = COALESCE(NULLIF('${name}', ''), name),
-        age = COALESCE(NULLIF(${age}, -1), age)
-        WHERE id = $1 RETURNING *`, [req.params.id]);
+        age = COALESCE(NULLIF(${age}, -1), age),
+        image = COALESCE(NULLIF('${image}, ''), image)
+        WHERE name = $1`, [req.params.name]);
         res.status(200).send(result.rows);
     }
     catch(e){
@@ -112,26 +114,26 @@ app.get('/api/achievements', (req, res) => {
     .catch(e => console.error(e.stack))
 });
 
-app.patch('/api/achievements/:ach_name', (req,res) => {
-  let achievement = req.body;
-  let name = achievement.ach_name;
-  let date = achievement.comp_date;
-  let scoutId = achievement.scout_id;
-  async function patchDate(){
-    try{
-      const result = await pool.query(`UPDATE achievements SET
-        name = COALESCE(NULLIF('${name}', ''), name),
-        date = COALESCE(NULLIF('${date}', ''), date),
-        scout_id = COALESCE(NULLIF(${scoutId}, -1), scoutId)
-        WHERE ach_name = $1`, [req.params.ach_name]);
-        res.status(200).send(result.rows);
-    }
-    catch(e){
-      console.error(e.stack);
-    }
-  }
-  patchDate()
-})
+// app.patch('/api/achievements/:ach_name', (req,res) => {
+//   let achievement = req.body;
+//   let name = achievement.ach_name;
+//   let date = achievement.comp_date;
+//   let scoutId = achievement.scout_id;
+//   async function patchDate(){
+//     try{
+//       const result = await pool.query(`UPDATE achievements SET
+//         name = COALESCE(NULLIF('${name}', ''), name),
+//         date = COALESCE(NULLIF('${date}', ''), date),
+//         scout_id = COALESCE(NULLIF(${scoutId}, -1), scoutId)
+//         WHERE ach_name = $1`, [req.params.ach_name]);
+//         res.status(200).send(result.rows);
+//     }
+//     catch(e){
+//       console.error(e.stack);
+//     }
+//   }
+//   patchDate()
+// })
 
 
 app.listen(port, () =>{
