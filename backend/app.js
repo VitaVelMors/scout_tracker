@@ -12,14 +12,14 @@ const pool = new Pool({connectionString:config.connectionString});
 const app = express();
 const port = 3000;
 
-
+app.use(cors(corsOptions))
 app.use(express.json());
 
 app.get('/', (req, res) =>{
   res.send('Hello World!');
 });
 
-app.get('/api/scouts', cors(corsOptions), (req, res) => {
+app.get('/api/scouts', (req, res) => {
   console.log('fun times')
   pool.query('SELECT * FROM scouts')
     .then(result => {
@@ -29,7 +29,7 @@ app.get('/api/scouts', cors(corsOptions), (req, res) => {
     .catch(e => console.error(e.stack))
 });
 
-app.get('/api/scouts/:scout_id', cors(corsOptions), (req, res) => {
+app.get('/api/scouts/:scout_id', (req, res) => {
   console.log(req.params.scout_id)
   async function getScout(){
     try{
@@ -47,7 +47,7 @@ app.get('/api/scouts/:scout_id', cors(corsOptions), (req, res) => {
   getScout()
 });
 
-app.post('/api/scouts', cors(corsOptions), (req, res) => {
+app.post('/api/scouts', (req, res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
@@ -69,7 +69,7 @@ app.post('/api/scouts', cors(corsOptions), (req, res) => {
   postScout()
 });
 
-app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
+app.patch('/api/scouts/:scout_id', (req,res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
@@ -90,7 +90,7 @@ app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   patchScout()
 });
 
-app.delete('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
+app.delete('/api/scouts/:scout_id', (req,res) => {
   console.log(req.params.scout_id)
   async function deleteScout(){
     try{
@@ -104,7 +104,7 @@ app.delete('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   deleteScout()
 });
 
-app.get('/api/achievements', cors(corsOptions), (req, res) => {
+app.get('/api/achievements', (req, res) => {
   pool.query('SELECT * FROM achievements')
     .then(result => {
       console.log(result.rows[0]);

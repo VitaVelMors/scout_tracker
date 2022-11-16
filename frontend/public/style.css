@@ -88,7 +88,7 @@ h1{
     input:hover{
       color: #0077ff;
       border: #0077ff solid 0.1em;
-      box-shadow: 0 0 .5em 0.3em #0077ff;
+      box-shadow: 0 0 .5em 0.5em #0077ff;
     }
     
     input:focus{
