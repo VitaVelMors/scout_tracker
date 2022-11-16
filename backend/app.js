@@ -139,5 +139,3 @@ app.get('/api/achievements', (req, res) => {
 app.listen(port, () =>{
   console.log(`I'm Watching You On Port ${port}`)
 })
-
-module.exports = {getScout, postScout, patchScout, deleteScout, patchDate}
