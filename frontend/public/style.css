@@ -15,8 +15,8 @@ body{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  height: 40em;
-  border: .5em solid #ffe81f;
+  height: 37em;
+  /* border: .5em solid #ffe81f; */
   padding: 1em;
   margin-bottom: 1em;
 }
@@ -72,7 +72,7 @@ h1{
       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.5em;
       font-weight: bold;
-      color: black;
+      color: #0077ff;
     }
     input{
       font-size: 1.5em;
@@ -139,11 +139,12 @@ h1{
   }
 
   .each-scout{
-    display: inline-block;
+    display: flex;
+    flex-flow:column nowrap;
     background-color: transparent;
     cursor: pointer;
     text-decoration: none;
-    text-align: end;
+    text-align: start;
     font-size: 1.5em;
     font-weight: bold;
     height: 10em;
