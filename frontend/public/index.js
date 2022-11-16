@@ -19,6 +19,27 @@ fetch(`${apiUrl}/api/scouts`)
           den.appendChild(scoutElement);
       });            
   })
+
+  // let findScout = document.getElementById('search-scout').addEventListener("click", event => {
+  //   let findName = document.getElementById("find").value;
+  //   den.empty()
+  //   den.appendChild()
+  // })
+
+  // fetch(`${apiUrl}/api/scouts`)
+  // .then(response => response.json())
+  // .then(data => {
+  //     data.forEach(scout => {
+  //         let scoutElement = document.createElement('button')
+  //         console.log(scoutElement);
+  //         scoutElement.classList.add("each-scout")
+  //         scoutElement.style.backgroundImage = `url(${scout.image})`;
+  //         scoutElement.style.backgroundSize = 'cover';
+  //         scoutElement.style.backgroundRepeat = 'no-repeat';
+  //         scoutElement.innerHTML = `${scout.name}`;
+  //         den.appendChild(scoutElement);
+  //     });            
+  // })
   // .then(scoutElement.addEventListener("click", event =>{
   //     den.empty();
   //     // fetch(`${apiUrl}/api/scouts/:id`)
