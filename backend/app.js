@@ -54,7 +54,7 @@ app.post('/api/scouts', (req, res) => {
   let image = scout.image;
   async function postScout(){
     try{
-      if (name === undefined || age === undefined || image === undefined) {
+      if (name === '' || age === '' || image === '') {
         alert(`You must enter a full name, age and image url to add a scout!`, response);
         res.sendStatus(400, "Bad Request");
       } else {

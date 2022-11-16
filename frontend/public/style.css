@@ -62,7 +62,7 @@ h1{
     margin-left: auto;
     margin-bottom: 3em;
     padding: .5em;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     text-align: right;
     align-items: flex-end;
     border-radius: 3em;
@@ -83,18 +83,19 @@ h1{
       width: 12em;
       height: 1.5em;
       border: .25em solid #ffe81f;
+      
     }
   
     input:hover{
       color: #0077ff;
-      border: #0077ff solid 0.1em;
-      box-shadow: 0 0 .5em 0.5em #0077ff;
+      border: #0077ff solid 0.25em;
+      box-shadow: 0 0 1em 0.3em #0077ff;
     }
     
     input:focus{
       color: #0077ff;
-      border: #0077ff solid 0.1em;
-      box-shadow: 0 0 .5em 0.3em #0077ff;
+      border: #0077ff solid 0.25em;
+      box-shadow: 0 0 1em 0.3em #0077ff;
     }
 
   .scoutbtn{
@@ -138,7 +139,6 @@ h1{
     gap: 3em;
     margin-bottom: 3em;
     text-align: center;
-    /* border: .4em solid #ffe81f; */
     flex-flow: row wrap;
   }
 
