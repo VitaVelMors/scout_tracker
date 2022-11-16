@@ -61,9 +61,11 @@ fetch(`${apiUrl}/api/scouts`)
       })
       .then(response => {
           if(response.status == 201){
-              var scoutElement = document.createElement(`<button type="button" class="each-scout">${scout.name}</button>`);
-              scoutElement.innerHTML = `${scout.name} - age ${scout.age}`;
-              den.appendChild(scoutElement);
+            let scoutElement = document.createElement('button')
+            console.log(scoutElement);
+            scoutElement.classList.add("each-scout")
+            scoutElement.innerHTML = `${scout.name}`;
+            den.appendChild(scoutElement);
           }else {
               alert("something went HORRIBLY WRONG!!!", response);
           }

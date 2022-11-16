@@ -27,11 +27,11 @@ app.get('/api/scouts', cors(corsOptions), (req, res) => {
     .catch(e => console.error(e.stack))
 });
 
-app.get('/api/scouts/:scout_id', cors(corsOptions), (req, res) => {
-  console.log(req.params.id)
+app.get('/api/scouts/:name', cors(corsOptions), (req, res) => {
+  console.log(req.params.name)
   async function getScout(){
     try{
-      const result = await pool.query('SELECT * FROM scouts WHERE id = $1', [req.params.id]);
+      const result = await pool.query('SELECT * FROM scouts WHERE name = $1', [req.params.name]);
       if (result.rows.length === 0) {
         res.sendStatus(404, "Not Found");
       } else {
@@ -51,8 +51,8 @@ app.post('/api/scouts', cors(corsOptions), (req, res) => {
   let age = scout.age;
   async function postScout(){
     try{
-      if (name === '' || age === '') {
-        console.log(`I don't think so buddy!`);
+      if (name === undefined || age === undefined) {
+        alert(`You must enter both a full name and an age to add a scout!`);
         res.sendStatus(400, "Bad Request");
       } else {
       const result = await pool.query(`INSERT INTO scouts (name, age) VALUES ('${name}', ${age}) RETURNING *`);
@@ -66,7 +66,7 @@ app.post('/api/scouts', cors(corsOptions), (req, res) => {
   postScout()
 });
 
-app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
+app.patch('/api/scouts/:name', cors(corsOptions), (req,res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
@@ -85,11 +85,11 @@ app.patch('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
   patchScout()
 })
 
-app.delete('/api/scouts/:scout_id', cors(corsOptions), (req,res) => {
-  console.log(req.params.id)
+app.delete('/api/scouts/:name', cors(corsOptions), (req,res) => {
+  console.log(req.params.name)
   async function deleteScout(){
     try{
-      const result = await pool.query('DELETE FROM scouts WHERE scout_id = $1', [req.params.name]);
+      const result = await pool.query('DELETE FROM scouts WHERE name = $1', [req.params.name]);
       // if (result.rows.length === 0) {
       //   res.sendStatus(404, "Not Found");
       // } else {
