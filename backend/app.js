@@ -14,7 +14,7 @@ const port = 3000;
 
 
 app.use(express.json());
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.get('/', (req, res) =>{
   res.send('Hello World!');
@@ -30,7 +30,7 @@ app.get('/api/scouts', (req, res) => {
     .catch(e => console.error(e.stack))
 });
 
-app.get('/api/scouts/:id', (req, res) => {
+app.get('/api/scouts/:id', cors(corsOptions), (req, res) => {
   console.log(req.params.name)
   async function getScout(){
     try{
@@ -48,7 +48,7 @@ app.get('/api/scouts/:id', (req, res) => {
   getScout()
 });
 
-app.post('/api/scouts', (req, res) => {
+app.post('/api/scouts', cors(corsOptions), (req, res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
@@ -70,7 +70,7 @@ app.post('/api/scouts', (req, res) => {
   postScout()
 });
 
-app.patch('/api/scouts/:id', (req,res) => {
+app.patch('/api/scouts/:id', cors(corsOptions), (req,res) => {
   let scout = req.body;
   let name = scout.name;
   let age = scout.age;
@@ -91,7 +91,7 @@ app.patch('/api/scouts/:id', (req,res) => {
   patchScout()
 });
 
-app.delete('/api/scouts/:id', (req,res) => {
+app.delete('/api/scouts/:id', cors(corsOptions), (req,res) => {
   console.log(req.params.name)
   async function deleteScout(){
     try{
@@ -105,7 +105,7 @@ app.delete('/api/scouts/:id', (req,res) => {
   deleteScout()
 });
 
-app.get('/api/achievements', (req, res) => {
+app.get('/api/achievements', cors(corsOptions), (req, res) => {
   pool.query('SELECT * FROM achievements')
     .then(result => {
       console.log(result.rows[0]);
